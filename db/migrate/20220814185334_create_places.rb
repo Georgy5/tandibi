@@ -11,5 +11,8 @@ class CreatePlaces < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :places, :locale
+    add_index :places, :coordinate, using: :gist
+    add_index :places, [:locale, :coordinate], unique: true
   end
 end
