@@ -7,5 +7,6 @@ class CreateBonds < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :bonds, [:user_id, friend_id], unique: true
   end
 end
