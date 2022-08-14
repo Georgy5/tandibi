@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_14_162251) do
+ActiveRecord::Schema.define(version: 2022_08_14_185334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "postgis"
 
   create_table "bonds", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -24,6 +25,22 @@ ActiveRecord::Schema.define(version: 2022_08_14_162251) do
     t.index ["user_id", "friend_id"], name: "index_bonds_on_user_id_and_friend_id", unique: true
   end
 
+  create_table "pictures", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.string "caption"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string "locale", null: false
+    t.geography "coordinate", limit: {:srid=>4326, :type=>"st_point", :has_z=>true, :geographic=>true}, null: false
+    t.string "name", null: false
+    t.string "place_type", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "thread_id"
@@ -32,6 +49,12 @@ ActiveRecord::Schema.define(version: 2022_08_14_162251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["postable_type", "postable_id"], name: "index_posts_on_postable"
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.string "text", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +71,7 @@ ActiveRecord::Schema.define(version: 2022_08_14_162251) do
 
   add_foreign_key "bonds", "users"
   add_foreign_key "bonds", "users", column: "friend_id"
+  add_foreign_key "pictures", "posts"
   add_foreign_key "posts", "posts", column: "thread_id"
   add_foreign_key "posts", "users"
 end
