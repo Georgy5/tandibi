@@ -35,11 +35,43 @@ RSpec.describe User, type: :model do
       user.email = "adam@example.org"
       expect(user.valid?).to be true
     end
+
     it "is invalid if email is taken" do
       create_a_user(email: "adam@example.org")
 
       user = User.new
       user.email = "adam@example.org"
+      expect(user).not_to be_valid
+    end
+
+    it "is invalid if the username is taken" do
+      user = create(:user)
+      another_user = create(:user)
+
+      expect(another_user).to be_valid
+      another_user.username = user.username
+      expect(another_user).not_to be_valid
+    end
+
+    it "is invalid if user's first name is blank" do
+      user = create(:user)
+      expect(user).to be_valid
+
+      user.first_name = ""
+      expect(user).not_to be_valid
+
+      user.first_name = nil
+      expect(user).not_to be_valid
+    end
+
+    it "is invalid if username is blank" do
+      user = create(:user)
+      expect(user).to be_valid
+
+      user.username = ""
+      expect(user).not_to be_valid
+
+      user.username = nil
       expect(user).not_to be_valid
     end
   end
