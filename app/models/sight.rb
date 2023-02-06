@@ -18,5 +18,6 @@
 #
 class Sight < ApplicationRecord
   belongs_to :place
-  validates :activity_type, presence: true
+  validates :activity_type, presence: true,
+    inclusion: { in: ["checkin", "checkout"] }
 end
