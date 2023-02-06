@@ -11,7 +11,16 @@
 #  updated_at :datetime         not null
 #
 class Place < ApplicationRecord
+  PLACE_TYPES = [
+    "restaurant",
+    "coffee_shop",
+    "mall",
+    "hotel",
+    "other",
+  ].freeze
+
   validates :coordinate, presence: true
   validates :locale, presence: true
   validates :name, presence: true
+  validates :place_type, inclusion: { in: PLACE_TYPES }
 end
