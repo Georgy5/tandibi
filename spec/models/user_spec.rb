@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
 
     it "is invalid if the username is taken" do
       user = create_a_user
-      another_user = create(:user)
+      another_user = create_a_user
 
       expect(another_user).to be_valid
       another_user.username = user.username
@@ -65,7 +65,7 @@ RSpec.describe User, type: :model do
     end
 
     it "is invalid if username is blank" do
-      user = create(:user)
+      user = create_a_user
       expect(user).to be_valid
 
       user.username = ""
