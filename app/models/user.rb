@@ -21,4 +21,6 @@ class User < ApplicationRecord
     format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, uniqueness: true, presence: true
   validates :first_name, presence: true
+
+  has_many :posts
 end
