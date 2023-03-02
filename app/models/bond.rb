@@ -30,4 +30,8 @@ class Bond < ApplicationRecord
 
   validates :state, presence: true,
     inclusion: { in: STATES }
+  
+  scope :following, -> { where(state: FOLLOWING) }
+  scope :requesting, -> { where(state: REQUESTING) }
+  scope :blocking, -> { where(state: BLOCKING) }
 end
