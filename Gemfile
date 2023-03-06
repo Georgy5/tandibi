@@ -36,6 +36,9 @@ gem 'rexml'
 # SVG icon pack designed for use modern web projects
 gem 'evil_icons', '~> 1.10'
 
+# Create styled HTML emails in Rails
+gem 'premailer-rails', '~> 1.11'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
