@@ -33,6 +33,9 @@ gem 'letter_opener_web', '~> 1.0'
 # Note: rexml gem is a bundled gem since Ruby 3
 gem 'rexml'
 
+# SVG icon pack designed for use modern web projects
+gem 'evil_icons', '~> 1.10'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

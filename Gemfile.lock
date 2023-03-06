@@ -84,6 +84,7 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
     erubi (1.11.0)
+    evil_icons (1.10.1)
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.2.0)
@@ -241,6 +242,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   devise (~> 4.7)
+  evil_icons (~> 1.10)
   factory_bot_rails (~> 5)
   jbuilder (~> 2.7)
   letter_opener_web (~> 1.0)
