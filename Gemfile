@@ -30,6 +30,9 @@ gem 'devise', '~> 4.7'
 # Preview send emails in the browser instead of sending.
 gem 'letter_opener_web', '~> 1.0'
 
+# Note: rexml gem is a bundled gem since Ruby 3
+gem 'rexml'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
