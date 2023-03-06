@@ -3,6 +3,8 @@ Tandibi project from the book: Learn Rails 6: Accelerated Web Development with R
 
 Tandibi is a simple social media app.
 
+![Tandibi_home](https://user-images.githubusercontent.com/2192560/223102622-b2ae10ff-60ec-4b5b-b8cc-fa9a5f961251.png)
+
 Versions:
 
 * Ruby: 3.0.4
