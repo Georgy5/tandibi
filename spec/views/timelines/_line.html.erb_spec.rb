@@ -15,4 +15,13 @@ RSpec.describe "timelines/_line.html.erb" do
     expect(subject.css(".line .identifier"))
       .not_to be_empty
   end
+
+  context "when there are replies" do
+    let(:post) { create(:post, :with_replies) }
+    
+    it "can be rendered" do
+      expect(subject.css(".replies .line").count)
+        .to eq post.replies.count
+    end
+  end
 end
