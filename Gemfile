@@ -39,6 +39,9 @@ gem 'evil_icons', '~> 1.10'
 # Create styled HTML emails in Rails
 gem 'premailer-rails', '~> 1.11'
 
+# Decorator pattern view helper
+gem 'active_decorator', '~> 1.3'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
