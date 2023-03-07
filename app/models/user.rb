@@ -53,6 +53,10 @@ class User < ApplicationRecord
   
   attr_writer :login
 
+  def to_param
+    username
+  end
+
   def login
     @login || username || email
   end
