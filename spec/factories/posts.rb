@@ -30,5 +30,6 @@ FactoryBot.define do
         create(:post),
         create(:post)
       ] }
+    end
   end
 end
