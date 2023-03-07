@@ -1,6 +1,6 @@
 class TimelinesController < ApplicationController
   def index
-    # displays the mass timeline
+    # Display the mass timeline
     @posts = Post.not_reply.where(user_id: [
       current_user.id,
       *current_user.followings.pluck(:id)
@@ -8,6 +8,8 @@ class TimelinesController < ApplicationController
   end
 
   def show
-    # displays the personal timeline
+    # Display the personal timeline
+    @posts = Post.written_by(params[:username]).not_reply
+      .order("created_at DESC")
   end
 end
