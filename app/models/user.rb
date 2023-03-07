@@ -28,6 +28,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          authentication_keys: [:login],
          reset_password_keys: [:login]
+
   validates :email, uniqueness: true, presence: true,
     format: { with: URI::MailTo::EMAIL_REGEXP }
   validates :username, uniqueness: true, presence: true
@@ -50,6 +51,8 @@ class User < ApplicationRecord
     -> { where("bonds.state = ?", Bond::FOLLOWING) },
     through: :inward_bonds,
     source: :user
+
+  before_save :ensure_proper_name_case
   
   attr_writer :login
 
