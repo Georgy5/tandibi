@@ -31,4 +31,7 @@ class Post < ApplicationRecord
     poster = User.find_by_username(username)
     where(user: poster)
   }
+
+  ## for the forms
+  attr_accessor :status_text
 end
