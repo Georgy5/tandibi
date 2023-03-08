@@ -32,8 +32,16 @@ class Post::Creator < ApplicationService
       status = Status.new(text: status_text)
       post.postable = status
       post.user = creator
+      post.thread = thread
       post.save
 
       post.persisted?
+    end
+
+    def thread
+      @thread ||= begin
+        thread_id = params[:thread_id].presence
+        Post.find(thread_id) if thread_id
+      end
     end
 end
