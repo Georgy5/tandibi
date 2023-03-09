@@ -44,5 +44,5 @@ body.modal-active {
 
 .modal
 .modal-container .title-bar .title {
-  @apply text-2xl font-bold;
+  @apply text-2xl text-white font-bold;
 }
