@@ -56,6 +56,32 @@
 
     textareaElm.focus()
   }
+
+  var fileChangeHandler = (evt) => {
+    var images = evt.target.files
+    var formElm = evt.target.closest("form")
+    var picturesElm = formElm.querySelector(".pictures")
+    var templateElm = picturesElm.querySelector(".template")
+
+    picturesElm.innerHTML = ''
+    picturesElm.appendChild(templateElm)
+
+    for(var i = 0; i < images.length; i++) {
+      var image = images[i]
+      var newPicContainerElm = templateElm.cloneNode(true)
+      var newImgElm = newPicContainerElm.querySelector("img")
+
+      if (!image.type.startsWith("image")) {
+        continue
+      }
+      
+      var imageUrl = URL.createObjectURL(image)
+      newImgElm.setAttribute("src", imageUrl)
+      newPicContainerElm.classList.remove("template")
+      picturesElm.appendChild(newPicContainerElm)
+    }
+  }
+
   document.querySelector("#<%= form_id %>")
     .addEventListener("click", clickHandler, false)
 </script>
