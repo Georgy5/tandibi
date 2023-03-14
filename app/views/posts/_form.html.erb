@@ -57,12 +57,25 @@
     textareaElm.focus()
   }
 
+  var revokeImageBlobUrl = (picturesElm) => {
+    var imgElms = picturesElm.querySelectorAll("img")
+
+    for (var i = 0; i < imgElms.length; i++) {
+      var imgElm = imgElms[i]
+      var blobUrl = imgElm.getAttribute("src")
+      if (blobUrl) {
+        URL.revokeObjectURL(blobUrl)
+      }
+    }
+  }
+
   var fileChangeHandler = (evt) => {
     var images = evt.target.files
     var formElm = evt.target.closest("form")
     var picturesElm = formElm.querySelector(".pictures")
     var templateElm = picturesElm.querySelector(".template")
 
+    revokeImageBlobUrl(picturesElm)
     picturesElm.innerHTML = ''
     picturesElm.appendChild(templateElm)
 
@@ -74,7 +87,7 @@
       if (!image.type.startsWith("image")) {
         continue
       }
-      
+
       var imageUrl = URL.createObjectURL(image)
       newImgElm.setAttribute("src", imageUrl)
       newPicContainerElm.classList.remove("template")
@@ -84,4 +97,7 @@
 
   document.querySelector("#<%= form_id %>")
     .addEventListener("click", clickHandler, false)
+
+  document.querySelector("#<%= form_id %> input[type='file']")
+    .addEventListener("change", fileChangeHandler, false)
 </script>
