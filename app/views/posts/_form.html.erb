@@ -2,7 +2,7 @@
 <% thread = local_assigns[:thread] %>
 
 <div class="poster flex <%= "p-3" unless thread %>">
-  <%= form_for Post.new, html: { id: form_id } do |f| %>
+  <%= form_with model: Post.new, id: form_id, multipart: true do |f| %>
     <%= f.hidden_field :postable_type, value: "Status" %>
     <%= f.hidden_field :thread_id, value: thread&.id %>
     <%= f.text_area :status_text, required: true,
