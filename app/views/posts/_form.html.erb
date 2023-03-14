@@ -8,6 +8,20 @@
     <%= f.text_area :status_text, required: true,
       placeholder: "What's happening?" %>
     <%= f.submit "Say", class: "submit-btn" %>
+    <div class="controls">
+      <div class="options">
+        <div class="option js-pictures-uploader">
+          <input type="file" multiple
+            id="picture_files"
+            name="post[pictures][]"
+            accept="image/*">
+          <%= evil_icon "ei-image" %>
+        </div>
+      </div>
+      <div>
+        <%= f.submit "Say", class: "submit-btn" %>
+      </div>
+    </div>
   <% end %>
 </div>
 
@@ -15,6 +29,26 @@
   var clickHandler = (evt) => {
     var formElm = evt.target.closest("form")
     var textareaElm = formElm.querySelector("textarea")
+
+    if (evt.target && evt.target.classList.contains("icon")) {
+      var parentElm = evt.target.parentElement
+      var parentClasses = parentElm.classList
+
+      if (parentClasses.contains("js-pictures-uploader")) {
+        var fileElm = parentElm.querySelector("input[type='file']")
+        fileElm.click()
+      }
+        return
+      } else if (evt.target) {
+        var parentElm = evt.target.parentElement
+        var parentClasses = parentElm.classList
+
+        if (parentClasses.contains("js-pictures-uploader")) {
+          return
+        }
+      }
+    }
+
     textareaElm.focus()
   }
   document.querySelector("#<%= form_id %>")
