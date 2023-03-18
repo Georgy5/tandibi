@@ -1,6 +1,7 @@
 <% user = post.user %>
 <% postable = post.postable %>
 <% show_replies = local_assigns.fetch(:show_replies, false) %>
+<% pictures = post.pictures.with_attached_file %>
 
 <%= render "layouts/inside_modal",
   title: "Send a reply",
@@ -10,7 +11,7 @@
 <% end %>
 
 <div class="picture-modals">
-  <% post.pictures.each do |picture| %>
+  <% pictures.each do |picture| %>
     <%= render "layouts/inside_modal",
       title: "",
       modal_class: "picture_modal_#{picture.id}" do %>
@@ -46,7 +47,7 @@
     <% end %>
 
     <div class="pictures">
-      <% post.pictures.each do |picture| %>
+      <% pictures.each do |picture| %>
         <a href="#">
           <div class="picture js-modal-open"
             data-modal-class="picture_modal_<%= picture.id %>">
