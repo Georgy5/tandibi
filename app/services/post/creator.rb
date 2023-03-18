@@ -27,6 +27,23 @@ class Post::Creator < ApplicationService
     def status_text
       @status_text ||= params.fetch(:status_text)
     end
+    
+    def thread
+      @thread ||= begin
+        thread_id = params[:thread_id].presence
+        Post.find(thread_id) if thread_id
+      end
+    end
+
+    def pictures
+      @pictures ||= params.fetch(:pictures, [])
+    end
+
+    def attach_pictures!
+      pictures.each do |uploaded_picture|
+        Post::PictureAttacher.call(post, uploaded_picture)
+      end
+    end
 
     def create_a_status_update
       status = Status.new(text: status_text)
@@ -35,13 +52,8 @@ class Post::Creator < ApplicationService
       post.thread = thread
       post.save
 
-      post.persisted?
-    end
-
-    def thread
-      @thread ||= begin
-        thread_id = params[:thread_id].presence
-        Post.find(thread_id) if thread_id
+      if post.persisted?
+        attach_pictures!
       end
     end
 end
