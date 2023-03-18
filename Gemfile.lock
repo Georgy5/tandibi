@@ -75,6 +75,9 @@ GEM
     bootsnap (1.13.0)
       msgpack (~> 1.2)
     builder (3.2.4)
+    bullet (7.0.7)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (11.1.3)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
@@ -241,6 +244,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
+    uniform_notifier (1.16.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.2.0)
@@ -266,6 +270,7 @@ DEPENDENCIES
   activerecord-postgis-adapter (~> 7)
   annotate (~> 3)
   bootsnap (>= 1.4.4)
+  bullet
   devise (~> 4.7)
   evil_icons (~> 1.10)
   factory_bot_rails (~> 5)
@@ -291,4 +296,4 @@ RUBY VERSION
    ruby 3.0.4p208
 
 BUNDLED WITH
-   2.3.13
+   2.4.8

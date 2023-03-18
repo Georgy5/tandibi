@@ -66,6 +66,8 @@ group :development do
   gem 'spring'
   # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
   gem 'annotate', '~> 3'
+  # Discover  N+1 query issues
+  gem "bullet"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
