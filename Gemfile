@@ -45,6 +45,9 @@ gem 'active_decorator', '~> 1.3'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+# Image hosting in the cloud
+gem 'cloudinary'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -53,6 +56,7 @@ group :development, :test do
   gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 5.1'
   gem 'factory_bot_rails', '~> 5'
+  gem 'dotenv-rails'
 end
 
 group :development do
