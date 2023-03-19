@@ -30,8 +30,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  # Store uploaded files on S3 bucket (see config/storage.yml for options).
+  config.active_storage.service = :s3
 
   # Default URL Options for Action Mailer
   config.action_mailer.default_url_options = {
