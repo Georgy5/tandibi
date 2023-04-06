@@ -67,6 +67,9 @@ ActiveRecord::Schema.define(version: 2023_03_10_225824) do
     t.string "place_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["coordinate"], name: "index_places_on_coordinate", using: :gist
+    t.index ["locale", "coordinate"], name: "index_places_on_locale_and_coordinate", unique: true
+    t.index ["locale"], name: "index_places_on_locale"
   end
 
   create_table "posts", force: :cascade do |t|
