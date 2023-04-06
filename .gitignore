@@ -32,6 +32,11 @@
 .env
 .env.*
 
+# Ignore credentials
+/config/credentials/production.key
+/config/credentials/development.key
+
+
 /public/packs
 /public/packs-test
 /node_modules
