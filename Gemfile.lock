@@ -74,8 +74,8 @@ GEM
       capybara (~> 3.13, < 4)
       websocket-driver (>= 0.6.5)
     aws-eventstream (1.2.0)
-    aws-partitions (1.730.0)
-    aws-sdk-core (3.170.1)
+    aws-partitions (1.743.0)
+    aws-sdk-core (3.171.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
@@ -83,7 +83,7 @@ GEM
     aws-sdk-kms (1.63.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.119.1)
+    aws-sdk-s3 (1.120.1)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -307,15 +307,15 @@ DEPENDENCIES
   active_decorator (~> 1.3)
   activerecord-postgis-adapter (~> 7)
   annotate (~> 3)
-  apparition (~> 0.5)
+  apparition (~> 0.6.0)
   aws-sdk-s3
   bootsnap (>= 1.4.4)
-  capybara (~> 3.31)
+  capybara (~> 3.39)
   devise (~> 4.7)
   evil_icons (~> 1.10)
   factory_bot_rails (~> 5)
   jbuilder (~> 2.7)
-  launchy (~> 2.5)
+  launchy (~> 2.5, >= 2.5.2)
   letter_opener_web (~> 1.0)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -323,7 +323,7 @@ DEPENDENCIES
   pry-byebug
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
-  rails (~> 6.1.3, >= 6.1.3.1)
+  rails (~> 6.1.7, >= 6.1.7.1)
   rexml
   rspec-rails (~> 5.1)
   sass-rails (>= 6)
@@ -337,4 +337,4 @@ RUBY VERSION
    ruby 3.2.1p31
 
 BUNDLED WITH
-   2.4.8
+   2.3.13

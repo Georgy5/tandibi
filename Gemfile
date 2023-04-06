@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.2.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.3', '>= 6.1.3.1'
+gem 'rails', '~> 6.1.7', '>= 6.1.7.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # ActiveRecord connection adapter for PostGIS
@@ -53,9 +53,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 # Setup Capybara for Integration Testing
 group :test do
-  gem 'launchy', '~> 2.5'
-  gem 'capybara', '~> 3.31'
-  gem 'apparition', '~> 0.5'
+  gem 'launchy', '~> 2.5', '>= 2.5.2'
+  gem 'capybara', '~> 3.39'
+  gem 'apparition', '~> 0.6.0'
 end
 
 group :development, :test do
