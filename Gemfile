@@ -51,6 +51,13 @@ gem "aws-sdk-s3", require: false
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+# Setup Capybara for Integration Testing
+group :test do
+  gem 'launchy', '~> 2.5'
+  gem 'capybara', '~> 3.31'
+  gem 'apparition', '~> 0.5'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug', platforms: [:mri, :mingw, :x64_mingw]
