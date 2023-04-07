@@ -28,12 +28,15 @@ feature "Posting" do
 
   scenario "Posting a status with a picture" do
     sign_in user
+
     expect {
       fill_in "post_status_text", with: status_text
-      attach_file "picture_files", Rails.root.join("mypic.jpg"), visible: false
+      attach_file "picture_files", Rails.root.join("lgtm.png"), visible: false
       click_on "Say"
     }.to change { user.reload.posts.count }.from(0).to(1)
+
     expect(page).to have_content status_text
+    
     within ".line .content" do
       expect(page).to have_selector(".pictures")
       expect(page).to have_selector("img", count: 1)
