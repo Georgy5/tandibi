@@ -7,7 +7,8 @@ feature "Posting" do
   def sign_in(user)
     visit new_user_session_path
     fill_in "Username / Email",	with: user.username
-    fill_in "Password",	with: user.password  
+    fill_in "Password",	with: user.password
+    click_on "Log in"
   end
 
   scenario "Posting a status" do
