@@ -55,7 +55,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :test do
   gem 'launchy', '~> 2.5', '>= 2.5.2'
   gem 'capybara', '~> 3.39'
-  gem 'apparition', '~> 0.6.0'
+  gem 'apparition', '~> 0.6'
 end
 
 group :development, :test do
@@ -75,7 +75,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # Annotates Rails/ActiveRecord Models, routes, fixtures, and others based on the database schema.
-  gem 'annotate', '~> 3'
+  gem 'annotate', '~> 3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
