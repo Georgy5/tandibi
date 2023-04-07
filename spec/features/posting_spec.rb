@@ -19,7 +19,7 @@ feature "Posting" do
     }.to change { user.reload.posts.count }.from(0).to(1)
 
     posted_status = user.posts.first.postable
-    expect(post_status.text).to eq status_text
+    expect(posted_status.text).to eq status_text
     expect(page).to have_content status_text
 
     within(".line .content") do
