@@ -31,7 +31,8 @@ Rails.application.configure do
   end
 
   # Store uploaded files on S3 bucket (see config/storage.yml for options).
-  config.active_storage.service = :aws
+  # TODO - change back to AWS S3
+  config.active_storage.service = :local
 
   # Default URL Options for Action Mailer
   config.action_mailer.default_url_options = {
