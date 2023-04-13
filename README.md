@@ -10,3 +10,11 @@ Versions:
 * Ruby: 3.2.1
 
 * Rails: 6.1.7.3
+
+
+### Note on running the app with Vue:
+
+Run the follwoing each in it's own Terminal
+
+    bin/rails server
+    bin/webpack-dev-server
