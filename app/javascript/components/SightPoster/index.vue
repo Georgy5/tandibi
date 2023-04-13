@@ -22,7 +22,7 @@
 
 <script>
   import Map from "./Map"
-  import PlaceFinder from "./PlaceFinder
+  import PlaceFinder from "./PlaceFinder"
   import PlaceList from "./PlaceList"
 
   export default {
