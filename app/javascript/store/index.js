@@ -20,7 +20,7 @@ const store = new Vuex.Store({
   // perform async actions
   actions,
 
-  // values derived from state
+  // values derived from the state
   getters: {
     hasError: state => state.error ? true : false
   },
@@ -29,5 +29,17 @@ const store = new Vuex.Store({
   strict: isDev
 })
 
-store.commit("RESET")
+function resetStore() {
+  store.commit("RESET")
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((pos) => {
+      store.commit("SET_COORDINATES",
+        [pos.coords.longitude, pos.coords.latitude])
+    })
+  }
+}
+
+resetStore()
+
 export default store
