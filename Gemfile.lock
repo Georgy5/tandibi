@@ -41,6 +41,11 @@ GEM
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
     active_decorator (1.4.0)
       activesupport
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (6.1.7.3)
       activesupport (= 6.1.7.3)
       globalid (>= 0.3.6)
@@ -104,6 +109,8 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    case_transform (0.2)
+      activesupport
     coderay (1.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
@@ -157,6 +164,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.2)
+    jsonapi-renderer (0.2.2)
     launchy (2.5.2)
       addressable (~> 2.8)
     letter_opener (1.8.1)
@@ -330,6 +338,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_decorator (~> 1.3)
+  active_model_serializers (~> 0.10.0)
   activerecord-postgis-adapter (~> 7)
   annotate (~> 3.1)
   apparition (~> 0.6)

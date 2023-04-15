@@ -54,6 +54,9 @@ gem 'aws-sdk-s3', require: false
 # HTTP/REST API client library
 gem 'faraday', '~> 1.0'
 
+# JSON API library
+gem 'active_model_serializers', '~> 0.10.0'
+
 # Setup Capybara for Integration Testing
 group :test do
   gem 'launchy', '~> 2.5', '>= 2.5.2'
