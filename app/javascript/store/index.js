@@ -10,6 +10,8 @@ const isDev = process.env.NODE_ENV !== "production"
 const store = new Vuex.Store({
   state: {
     error: null,
+    coordinates: null,
+    sight: null,
   },
 
   // the only way to change the state
