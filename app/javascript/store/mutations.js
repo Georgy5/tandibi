@@ -23,7 +23,7 @@ const mutations = {
   RESET(state) {
     state.error = null
 
-    state.state.coordinates = {
+    state.coordinates = {
       lat: null,
       lng: null,
     }
