@@ -71,6 +71,7 @@
       max-height: 300px;
       min-height: 300px;
     }
+
     .place {
       @apply ml-2;
     }
