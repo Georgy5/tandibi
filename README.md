@@ -18,3 +18,7 @@ Run the follwoing each in it's own Terminal
 
     bin/rails server
     bin/webpack-dev-server
+
+
+Show Google Maps in Vue component\
+![tandibi_google_maps](https://user-images.githubusercontent.com/2192560/232321698-57063e1c-b81e-40d3-8625-e87a5f405f58.PNG)
